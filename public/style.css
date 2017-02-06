@@ -1,12 +1,23 @@
+h1 {
+    text-align: center;
+    padding: 2em;
+}
+
 .btn-secondary {
     margin: 0.5em;
     float: right;
 }
 
+.container {
+    margin: auto;
+    text-align: center;
+}
+
 .info-wrapper {
-    width: 400px;
+    width: 350px;
     text-align: center;
     padding: 10px;
+    margin: 0 auto;
     float: left;
     display: inline-block;
 }
