@@ -2,3 +2,20 @@
     margin: 0.5em;
     float: right;
 }
+
+.info-wrapper {
+    width: 400px;
+    text-align: center;
+    padding: 10px;
+    float: left;
+    display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+.info-wrapper img {
+    padding: 5px;
+    width: 200px;
+}

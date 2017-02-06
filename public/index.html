@@ -39,19 +39,21 @@
         <main>
             <!-- GALLERY STARTS -->
             <div id="gallery">
-                <div class="banner">
-                    <br>
-                    <br>
-                    <h1>Color's Gallery</h1>
-                </div>
-                <div ng-repeat="palettes in ctrl.palettes">
-                    Color name: {{ palettes.color_name }}<br>
-                    <img ng-src="{{palettes.img}}" />
-                </div>
+                <br>
+                <br>
+                <h1>Color's Gallery</h1>
+
+                <ul>
+                    <li ng-repeat="palettes in ctrl.palettes">
+                        <div class="info-wrapper">
+                            <p>Color name: {{ palettes.color_name }}</p>
+                            <img ng-src="{{palettes.img}}" />
+                        </div>
+                    </li>
+                </ul>
             </div>
+
         </main>
-
-
 
 
 
