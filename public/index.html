@@ -36,6 +36,21 @@
             <!-- NAVBAR ENDS -->
         </header>
 
+        <main>
+            <!-- GALLERY STARTS -->
+            <div id="gallery">
+                <div class="banner">
+                    <br>
+                    <br>
+                    <h1>Color's Gallery</h1>
+                </div>
+                <div ng-repeat="palettes in ctrl.palettes">
+                    Color name: {{ palettes.color_name }}<br>
+                    <img ng-src="{{palettes.img}}" />
+                </div>
+            </div>
+        </main>
+
 
 
 
