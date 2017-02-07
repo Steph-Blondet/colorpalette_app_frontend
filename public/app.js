@@ -7,6 +7,7 @@ app.controller('mainController', ['$http', function($http) {
     this.message = "controller works";
     var controller = this;
 
+// GETTING PALETTE
     $http({
         method: 'GET',
         url: "http://localhost:3000/palettes"
@@ -20,6 +21,8 @@ app.controller('mainController', ['$http', function($http) {
             console.log(res, " :failed callback");
      }.bind(this));
 
+
+
      $http({
          method: 'GET',
          url: "http://localhost:3000/users"
@@ -32,6 +35,24 @@ app.controller('mainController', ['$http', function($http) {
          function(res) {
              console.log(res, " :failed callback");
       }.bind(this));
+
+
+
+// REGISTER FUNCTION
+    this.register = {};
+
+    this.createUser = function() {
+        $http({
+            method: 'POST',
+            url: "http://localhost:3000/users",
+            data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
+        }).then(function(response) {
+            console.log('signing up');
+            console.log(response.data);
+            this.register = {};
+
+        }.bind(this));
+    }
 
 
 }]);

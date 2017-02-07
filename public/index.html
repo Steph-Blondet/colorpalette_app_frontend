@@ -95,19 +95,24 @@
                                 <h4 class="modal-title">Register</h4>
                             </div>
                             <div class="modal-body">
-                                <form action="index.html" method="post">
+                                <form ng-submit='ctrl.createUser();'>
                                     <div class="form-group">
-                                        <label for="exampleInputUserName1">Username</label>
-                                        <input class="form-control" type="text" placeholder="Username" id="inputUserName">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input class="form-control" type="text" placeholder="Password" id="inputUserName">
+                                        <label for="exampleInputUserName1">Name</label>
+                                        <input class="form-control" type="text" placeholder="Name" ng-model='ctrl.register.name'>
+                                        <label for="exampleInputPassword1">Gender</label>
+                                        <input class="form-control" type="text" placeholder="Gender" ng-model='ctrl.register.gender'>
+                                        <label for="exampleInputPassword1">Age</label>
+                                        <input class="form-control" type="text" placeholder="Age" ng-model='ctrl.register.age'>
+
+                                        <div class="modal-footer">
+                                            <input class="submit" class="btn btn-primary" type="submit" />
+                                            <button type="submit" class="btn btn-primary">Register</button>
+                                            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary">Register</button>
-                                <button class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -124,12 +129,12 @@
                             <div class="modal-body">
                                 <form action="index.html" method="post">
                                     <div class="form-group">
-                                        <label for="exampleInputName1">Add a Color</label>
-                                        <input type="url" name="Color Image" placeholder="Add a Color">
-                                        <br>
+                                        <label for="exampleInputName1">Color Name</label>
+                                        <input class="form-control" type="text" placeholder="Color Name" id="inputUserName">
                                         <label for="exampleInputName1">Color Image</label>
-                                        <input type="url" name="Color Image" placeholder="Color Image Url">
-
+                                        <input class="form-control" type="text" placeholder="Url" id="inputUserName">
+                                        <label for="exampleInputName1">Username</label>
+                                        <input class="form-control" type="text" placeholder="Username" id="inputUserName">
                                     </div>
                                 </form>
                             </div>
