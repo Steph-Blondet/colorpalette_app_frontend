@@ -53,6 +53,7 @@
                                 <p>User's name: {{ user.age }}</p>
                                 <img ng-src="{{palettes.img}}" />
                                 <button class="btn btn-link btn-sm" data-target="#edit-modal" data-toggle="modal">Edit Color Info</button>
+                                <button class="btn btn-link btn-sm" ng-click='ctrl.deletePalette(palette.id)'>Delete Color</button>
                             </div>
                         </li>
                     </ul>

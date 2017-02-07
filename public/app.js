@@ -57,37 +57,49 @@ app.controller('mainController', ['$http', function($http) {
 
 
 // LOG IN FUNCTION
-// this.signIn = {};
-// this.login = function() {
-//     $http({
-//         method: 'POST',
-//         url: "http://localhost:3000/users/login",
-//         data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
-//     }).then(function(response) {
-//         console.log(response.data);
-//         if (response.data.status === 401) {
-//             this.wrongPassword = true;
-//             this.message = 'Incorrect username or password';
-//         } else {
-//
-//         }
-//     }.bind(this));
-// }
+    // this.signIn = {};
+    // this.login = function() {
+    //     $http({
+    //         method: 'POST',
+    //         url: "http://localhost:3000/users/login",
+    //         data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
+    //     }).then(function(response) {
+    //         console.log(response.data);
+    //         if (response.data.status === 401) {
+    //             this.wrongPassword = true;
+    //             this.message = 'Incorrect username or password';
+    //         } else {
+    //
+    //         }
+    //     }.bind(this));
+    // }
 
 
 
 
 // EDIT FUNCTION
-this.editPalette = function(id) {
-    $http({
-        method: 'PUT',
-        url: "http://localhost:3000/users/" + id,
-        data: {palette: {color_name: this.editPalette.color_name, img: this.editPalette.img}}
-    }).then(function(response) {
-        console.log('editing palette');
-        console.log(response.data);
-    }.bind(this));
-};
+    this.editPalette = function(id) {
+        $http({
+            method: 'PUT',
+            url: "http://localhost:3000/palettes/" + id,
+            data: {palette: {color_name: this.editPalette.color_name, img: this.editPalette.img}}
+        }).then(function(response) {
+            console.log('editing palette');
+            console.log(response.data);
+        }.bind(this));
+    };
+
+
+
+// DELETE FUNCTION
+    this.deletePalette = function(id) {
+        $http({
+            method: 'DELETE',
+            url: "http://localhost:3000/palettes/" + id
+          }).then(function(response) {
+              console.log(response);
+          }.bind(this));
+    }
 
 
 }]);
