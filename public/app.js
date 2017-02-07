@@ -55,4 +55,25 @@ app.controller('mainController', ['$http', function($http) {
     }
 
 
+
+// LOG IN FUNCTION
+// this.signIn = {};
+// this.login = function() {
+//     $http({
+//         method: 'POST',
+//         url: "http://localhost:3000/users/login",
+//         data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
+//     }).then(function(response) {
+//         console.log(response.data);
+//         if (response.data.status === 401) {
+//             this.wrongPassword = true;
+//             this.message = 'Incorrect username or password';
+//         } else {
+//
+//         }
+//     }.bind(this));
+// }
+
+
+
 }]);
