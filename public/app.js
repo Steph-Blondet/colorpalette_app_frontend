@@ -20,5 +20,18 @@ app.controller('mainController', ['$http', function($http) {
             console.log(res, " :failed callback");
      }.bind(this));
 
+     $http({
+         method: 'GET',
+         url: "http://localhost:3000/users"
+     }).then(
+         function(res) {
+             console.log(controller);
+             console.log(res.data);
+             controller.users = res.data;
+      },
+         function(res) {
+             console.log(res, " :failed callback");
+      }.bind(this));
+
 
 }]);
