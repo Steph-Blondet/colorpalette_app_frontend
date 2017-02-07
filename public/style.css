@@ -8,13 +8,18 @@ h1 {
     float: right;
 }
 
+.btn-style {
+    text-align: center;
+    padding-bottom: 5em;
+}
+
 .container {
-    margin: auto;
+    margin: 0 auto;
     text-align: center;
 }
 
 .info-wrapper {
-    width: 350px;
+    width: 300px;
     text-align: center;
     padding: 10px;
     margin: 0 auto;
@@ -29,4 +34,8 @@ li {
 .info-wrapper img {
     padding: 5px;
     width: 200px;
+}
+
+p {
+    font-size: 1.2em;
 }
