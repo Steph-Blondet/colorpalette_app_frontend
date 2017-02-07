@@ -76,4 +76,18 @@ app.controller('mainController', ['$http', function($http) {
 
 
 
+
+// EDIT FUNCTION
+this.editPalette = function(id) {
+    $http({
+        method: 'PUT',
+        url: "http://localhost:3000/users/" + id,
+        data: {palette: {color_name: this.editPalette.color_name, img: this.editPalette.img}}
+    }).then(function(response) {
+        console.log('editing palette');
+        console.log(response.data);
+    }.bind(this));
+};
+
+
 }]);
