@@ -78,7 +78,25 @@ app.controller('mainController', ['$http', function($http) {
 
 
 // EDIT FUNCTION
+    this.editPaletteButton = function(id){
+        $http({
+            method: 'GET',
+            url: "http://localhost:3000/palettes/" + id
+        }).then(
+            function(res) {
+                console.log(controller);
+                console.log(res.data);
+                controller.palette = res.data;
+         },
+            function(res) {
+                console.log(res, " :failed callback");
+         }.bind(this));
+    };
+
+
+
     this.editPalette = function(id) {
+        console.log(id);
         $http({
             method: 'PUT',
             url: "http://localhost:3000/palettes/" + id,
@@ -86,6 +104,7 @@ app.controller('mainController', ['$http', function($http) {
         }).then(function(response) {
             console.log('editing palette');
             console.log(response.data);
+            location.reload();
         }.bind(this));
     };
 

@@ -50,12 +50,13 @@
                         <li ng-repeat="palettes in ctrl.palettes">
                             <div class="info-wrapper">
                                 <p>Color name: {{ palettes.color_name }}</p>
-                                <p>User's name: {{ user.age }}</p>
+
                                 <img ng-src="{{palettes.img}}" />
-                                <button class="btn btn-link btn-sm" data-target="#edit-modal" data-toggle="modal">Edit Color Info</button>
+                                <button ng-click="ctrl.editPaletteButton(palettes.id)" class="btn btn-link btn-sm" data-target="#edit-modal" data-toggle="modal">Edit Color Info</button>
                                 <button class="btn btn-link btn-sm" ng-click='ctrl.deletePalette(palette.id)'>Delete Color</button>
                             </div>
                         </li>
+                        <p>User's name: {{ ctrl.users.name }}</p>
                     </ul>
                 </div>
             </div>
@@ -157,17 +158,18 @@
                                 <h4 class="modal-title">Edit Color</h4>
                             </div>
                             <div class="modal-body">
-                                <form ng-submit='ctrl.editPalette();'>
+                                {{palette.name}}
+                                <form ng-submit='ctrl.editPalette(ctrl.palette.id);'>
                                     <div class="form-group">
                                         <label for="exampleInputName1">Color Name</label>
-                                        <input ng-model='ctrl.editPalette.color_name' class="form-control" type="text" placeholder="Color Name" id="inputUserName">
+                                        <input ng-model='ctrl.editPalette.color_name' class="form-control" type="text" placeholder="{{ctrl.palette.color_name}}" id="inputUserName">
                                         <label for="exampleInputName1">Color Image</label>
                                         <input ng-model='ctrl.editPalette.img' class="form-control" type="text" placeholder="Url" id="inputUserName">
                                         <!-- <label for="exampleInputName1">Username</label>
                                         <input ng-model='ctrl.editPalette' class="form-control" type="text" placeholder="Username" id="inputUserName"> -->
 
                                         <div class="modal-footer">
-                                            <input class="submit" class="btn btn-primary" type="submit" />
+                                            <input ng-model='ctrl.palette' class="submit" class="btn btn-primary" type="submit" />
                                             <button class="btn btn-primary" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
