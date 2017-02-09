@@ -70,25 +70,6 @@ app.controller('mainController', ['$http', function($http) {
         }.bind(this));
     }
 
-// LOG IN FUNCTION
-    // this.signIn = {};
-    // this.login = function() {
-    //     $http({
-    //         method: 'POST',
-    //         url: "http://localhost:3000/users/login",
-    //         data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
-    //     }).then(function(response) {
-    //         console.log(response.data);
-    //         if (response.data.status === 401) {
-    //             this.wrongPassword = true;
-    //             this.message = 'Incorrect username or password';
-    //         } else {
-    //
-    //         }
-    //     }.bind(this));
-    // }
-
-
 
 
 // EDIT FUNCTION
@@ -126,6 +107,7 @@ app.controller('mainController', ['$http', function($http) {
 
 // DELETE FUNCTION
     this.deletePaletteButton = function(id){
+        console.log(id);
         $http({
             method: 'GET',
             url: "http://localhost:3000/palettes/" + id
@@ -141,13 +123,35 @@ app.controller('mainController', ['$http', function($http) {
     };
 
     this.deletePalette = function(id) {
+        console.log(id);
         $http({
             method: 'DELETE',
             url: "http://localhost:3000/palettes/" + id
-          }).then(function(response) {
-              console.log(response);
-          }.bind(this));
+        }).then(function(response) {
+            console.log('deleting color');
+            console.log(response.data);
+            location.reload();
+        }.bind(this));
     }
 
 
 }]);
+
+
+// LOG IN FUNCTION
+    // this.signIn = {};
+    // this.login = function() {
+    //     $http({
+    //         method: 'POST',
+    //         url: "http://localhost:3000/users/login",
+    //         data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
+    //     }).then(function(response) {
+    //         console.log(response.data);
+    //         if (response.data.status === 401) {
+    //             this.wrongPassword = true;
+    //             this.message = 'Incorrect username or password';
+    //         } else {
+    //
+    //         }
+    //     }.bind(this));
+    // }
