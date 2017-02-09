@@ -115,7 +115,6 @@
                                     </div>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -130,18 +129,19 @@
                                 <h4 class="modal-title">Add a Color</h4>
                             </div>
                             <div class="modal-body">
-                                <form action="index.html" method="post">
+                                <form ng-submit='ctrl.createColor();'>
                                     <div class="form-group">
                                         <label for="exampleInputName1">Color Name</label>
-                                        <input class="form-control" type="text" placeholder="Color Name" id="inputUserName">
+                                        <input class="form-control" type="text" placeholder="Color Name" id="inputUserName" ng-model='ctrl.palette.color_name'>
                                         <label for="exampleInputName1">Color Image</label>
-                                        <input class="form-control" type="text" placeholder="Url" id="inputUserName">
+                                        <input class="form-control" type="text" placeholder="Url" id="inputUserName" ng-model='ctrl.palette.img'>
+
+                                        <div class="modal-footer">
+                                            <input class="submit" class="btn btn-primary" type="submit" />
+                                            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary">Submit</button>
-                                <button class="btn btn-primary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>

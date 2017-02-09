@@ -22,8 +22,8 @@ app.controller('mainController', ['$http', function($http) {
      }.bind(this));
 
 
-
-     $http({
+// GETTING USERS
+    $http({
          method: 'GET',
          url: "http://localhost:3000/users"
      }).then(
@@ -55,6 +55,20 @@ app.controller('mainController', ['$http', function($http) {
     }
 
 
+// ADD A COLOR FUNCTION
+    this.palette = {};
+
+    this.createColor = function() {
+        $http({
+            method: 'POST',
+            url: "http://localhost:3000/palettes",
+            data: {palette: {color_name: this.palette.color_name, img: this.palette.img}}
+        }).then(function(response) {
+            console.log('adding color');
+            console.log(response.data);
+            this.palette = {};
+        }.bind(this));
+    }
 
 // LOG IN FUNCTION
     // this.signIn = {};
