@@ -132,9 +132,11 @@
                                 <form ng-submit='ctrl.createColor();'>
                                     <div class="form-group">
                                         <label for="exampleInputName1">Color Name</label>
-                                        <input class="form-control" type="text" placeholder="Color Name" id="inputUserName" ng-model='ctrl.palette.color_name'>
+                                        <input class="form-control" type="text" placeholder="Color Name" id="inputUserName" ng-model='ctrl.palettes.color_name'>
                                         <label for="exampleInputName1">Color Image</label>
-                                        <input class="form-control" type="text" placeholder="Url" id="inputUserName" ng-model='ctrl.palette.img'>
+                                        <input class="form-control" type="text" placeholder="Url" id="inputUserName" ng-model='ctrl.palettes.img'>
+                                        <label for="exampleInputName1">User Id</label>
+                                        <input class="form-control" type="text" placeholder="User Id Number" id="inputUserName" ng-model='ctrl.palettes.user_id'>
 
                                         <div class="modal-footer">
                                             <input class="submit" class="btn btn-primary" type="submit" />

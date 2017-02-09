@@ -28,7 +28,6 @@ app.controller('mainController', ['$http', function($http) {
          url: "http://localhost:3000/users"
      }).then(
          function(res) {
-             console.log(controller);
              console.log(res.data);
              controller.users = res.data;
       },
@@ -56,17 +55,17 @@ app.controller('mainController', ['$http', function($http) {
 
 
 // ADD A COLOR FUNCTION
-    this.palette = {};
+    this.palettes = {};
 
     this.createColor = function() {
         $http({
             method: 'POST',
-            url: "http://localhost:3000/palettes",
-            data: {palette: {color_name: this.palette.color_name, img: this.palette.img}}
+            url: "http://localhost:3000/palettes/",
+            data: {palette: {color_name: this.palettes.color_name, img: this.palettes.img, user_id: this.palettes.user_id}}
         }).then(function(response) {
             console.log('adding color');
             console.log(response.data);
-            this.palette = {};
+            this.palettes = {};
         }.bind(this));
     }
 
