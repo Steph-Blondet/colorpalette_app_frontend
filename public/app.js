@@ -111,6 +111,21 @@ app.controller('mainController', ['$http', function($http) {
 
 
 // DELETE FUNCTION
+    this.deletePaletteButton = function(id){
+        $http({
+            method: 'GET',
+            url: "http://localhost:3000/palettes/" + id
+        }).then(
+            function(res) {
+                console.log(res.data);
+                controller.palette = res.data;
+                location.reload();
+         },
+            function(res) {
+                console.log(res, " :failed callback");
+         }.bind(this));
+    };
+
     this.deletePalette = function(id) {
         $http({
             method: 'DELETE',

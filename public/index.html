@@ -54,10 +54,10 @@
 
                                 <img ng-src="{{palettes.img}}" />
                                 <button ng-click="ctrl.editPaletteButton(palettes.id)" class="btn btn-link btn-sm" data-target="#edit-modal" data-toggle="modal">Edit Color Info</button>
-                                <button class="btn btn-link btn-sm" ng-click='ctrl.deletePalette(palette.id)'>Delete Color</button>
+                                <button ng-model='ctrl.palette' class="btn btn-link btn-sm" ng-click='ctrl.deletePaletteButton(palettes.id)'>Delete Color</button>
+
                             </div>
                         </li>
-                        <p>User's name: {{ ctrl.users.name }}</p>
                     </ul>
                 </div>
             </div>
@@ -136,8 +136,6 @@
                                         <input class="form-control" type="text" placeholder="Color Name" id="inputUserName">
                                         <label for="exampleInputName1">Color Image</label>
                                         <input class="form-control" type="text" placeholder="Url" id="inputUserName">
-                                        <label for="exampleInputName1">Username</label>
-                                        <input class="form-control" type="text" placeholder="Username" id="inputUserName">
                                     </div>
                                 </form>
                             </div>
