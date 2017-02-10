@@ -13,7 +13,7 @@ app.controller('mainController', ['$http', function($http) {
 // GETTING PALETTE
     $http({
         method: 'GET',
-        url: "/"
+        url: "/palettes"
     }).then(
         function(res) {
             console.log(controller);
@@ -64,7 +64,7 @@ app.controller('mainController', ['$http', function($http) {
     this.createColor = function() {
         $http({
             method: 'POST',
-            url: this.URL,
+            url: "/palettes",
             data: {palette: {color_name: this.addColor.color_name, img: this.addColor.img, user_id: this.addColor.user_id}}
         }).then(function(response) {
             console.log('adding color');
@@ -80,7 +80,7 @@ app.controller('mainController', ['$http', function($http) {
     this.editPaletteButton = function(id){
         $http({
             method: 'GET',
-            url: this.URL + id
+            url: "/palettes" + id
         }).then(
             function(res) {
                 console.log(controller);
@@ -97,7 +97,7 @@ app.controller('mainController', ['$http', function($http) {
         console.log(id);
         $http({
             method: 'PUT',
-            url: this.URL + id,
+            url: "/palettes" + id,
             data: {palette: {color_name: this.editPalette.color_name, img: this.editPalette.img}}
         }).then(function(response) {
             console.log('editing palette');
@@ -113,7 +113,7 @@ app.controller('mainController', ['$http', function($http) {
         console.log(id);
         $http({
             method: 'GET',
-            url: this.URL + id
+            url: "/palettes" + id
         }).then(
             function(res) {
                 console.log(res.data);
