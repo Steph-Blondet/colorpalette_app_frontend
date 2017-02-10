@@ -27,7 +27,6 @@
                                 <li><a href="users.html">User's Palettes</a></li>
                             </ul>
                             <div class="">
-                                <!-- <button class="btn btn-secondary btn-md" data-target="#login-modal" data-toggle="modal">Login</button> -->
                                 <button class="btn btn-secondary btn-md" data-target="#register-modal" data-toggle="modal">Register</button>
                             </div>
                         </div>
@@ -62,33 +61,6 @@
             </div>
 
             <!-- MODAL SECTION -->
-                <!-- LOGIN MODAL STARTS -->
-                <!-- <div class="modal" id="login-modal" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Login</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form action="index.html" method="post">
-                                    <div class="form-group">
-                                        <label for="exampleInputUserName1">Username</label>
-                                        <input class="form-control" type="text" placeholder="Username" id="inputUserName">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input class="form-control" type="text" placeholder="Password" id="inputUserName">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary">Login</button>
-                                <button class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- LOGIN MODAL ENDS -->
-
                 <!-- REGISTER MODAL STARTS -->
                 <div class="modal" id="register-modal" tabindex="-1">
                     <div class="modal-dialog">
@@ -119,7 +91,7 @@
                 </div>
                 <!-- REGISTER MODAL ENDS -->
 
-                <!-- CREATE MODAL STARTS -->
+                <!-- CREATE COLOR MODAL STARTS -->
                 <div class="modal" id="create-modal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -147,9 +119,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- CREATE MODAL ENDS -->
+                <!-- CREATE COLOR MODAL ENDS -->
 
-                <!-- EDIT MODAL STARTS -->
+                <!-- EDIT COLOR MODAL STARTS -->
                 <div class="modal" id="edit-modal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -165,8 +137,6 @@
                                         <input ng-model='ctrl.editPalette.color_name' class="form-control" type="text" placeholder="{{ctrl.palette.color_name}}" id="inputUserName">
                                         <label for="exampleInputName1">Color Image</label>
                                         <input ng-model='ctrl.editPalette.img' class="form-control" type="text" placeholder="Url" id="inputUserName">
-                                        <!-- <label for="exampleInputName1">Username</label>
-                                        <input ng-model='ctrl.editPalette' class="form-control" type="text" placeholder="Username" id="inputUserName"> -->
 
                                         <div class="modal-footer">
                                             <input ng-model='ctrl.palette' class="submit" class="btn btn-primary" type="submit" />
@@ -178,7 +148,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- EDIT MODAL ENDS -->
+                <!-- EDIT COLOR MODAL ENDS -->
 
             <!-- MODAL ENDS -->
         </main>

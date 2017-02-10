@@ -8,6 +8,7 @@ app.controller('mainController', ['$http', function($http) {
     var controller = this;
 
 
+
 // GETTING PALETTE
     $http({
         method: 'GET',
