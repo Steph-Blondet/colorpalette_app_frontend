@@ -6,14 +6,14 @@ var app = angular.module('colorpalette', []);
 app.controller('mainController', ['$http', function($http) {
     this.message = "controller works";
     var controller = this;
-    this.URL = "https://color-palettes-app.herokuapp.com/palettes"
+    // this.URL = "https://color-palettes-app.herokuapp.com/palettes"
 
 
 
 // GETTING PALETTE
     $http({
         method: 'GET',
-        url: this.URL
+        url: "/palettes"
     }).then(
         function(res) {
             console.log(controller);
@@ -29,7 +29,7 @@ app.controller('mainController', ['$http', function($http) {
 // GETTING USERS
     $http({
          method: 'GET',
-         url: "http://localhost:3000/users"
+         url: "/users"
      }).then(
          function(res) {
              console.log(res.data);
@@ -47,7 +47,7 @@ app.controller('mainController', ['$http', function($http) {
     this.createUser = function() {
         $http({
             method: 'POST',
-            url: "http://localhost:3000/users",
+            url: "/users",
             data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
         }).then(function(response) {
             console.log('signing up');
