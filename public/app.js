@@ -13,7 +13,7 @@ app.controller('mainController', ['$http', function($http) {
 // GETTING PALETTE
     $http({
         method: 'GET',
-        url: "/palettes"
+        url: "/"
     }).then(
         function(res) {
             console.log(controller);
