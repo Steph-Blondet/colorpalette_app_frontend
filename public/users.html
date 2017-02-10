@@ -38,7 +38,7 @@
                     <li ng-repeat="user in ctrl.users">
                         <div class="info-wrapper">
                             <p><b>User's name:</b> {{ user.name }}</p>
-
+                            <p><b>User's id:</b> {{ user.id }}</p>
                             <ul>
                                 <p><b>COLOR PALETTES</b></p>
                                 <li ng-repeat="palettes in ctrl.palettes | filter: {user_id:user.id}">
