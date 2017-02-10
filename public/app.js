@@ -7,6 +7,7 @@ app.controller('mainController', ['$http', function($http) {
     this.message = "controller works";
     var controller = this;
 
+
 // GETTING PALETTE
     $http({
         method: 'GET',
@@ -20,6 +21,7 @@ app.controller('mainController', ['$http', function($http) {
         function(res) {
             console.log(res, " :failed callback");
      }.bind(this));
+
 
 
 // GETTING USERS
@@ -49,23 +51,24 @@ app.controller('mainController', ['$http', function($http) {
             console.log('signing up');
             console.log(response.data);
             this.register = {};
-
         }.bind(this));
     }
 
 
+
 // ADD A COLOR FUNCTION
-    this.palettes = {};
+    this.addColor = {};
 
     this.createColor = function() {
         $http({
             method: 'POST',
-            url: "http://localhost:3000/palettes/",
-            data: {palette: {color_name: this.palettes.color_name, img: this.palettes.img, user_id: this.palettes.user_id}}
+            url: "http://localhost:3000/palettes",
+            data: {palette: {color_name: this.addColor.color_name, img: this.addColor.img, user_id: this.addColor.user_id}}
         }).then(function(response) {
             console.log('adding color');
             console.log(response.data);
-            this.palettes = {};
+            this.addColor = {};
+            location.reload();
         }.bind(this));
     }
 
@@ -86,7 +89,6 @@ app.controller('mainController', ['$http', function($http) {
                 console.log(res, " :failed callback");
          }.bind(this));
     };
-
 
 
     this.editPalette = function(id) {
@@ -120,6 +122,7 @@ app.controller('mainController', ['$http', function($http) {
                 console.log(res, " :failed callback");
          }.bind(this));
     };
+
 
     this.deletePalette = function(id) {
         console.log(id);

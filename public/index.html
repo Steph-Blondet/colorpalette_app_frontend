@@ -55,7 +55,6 @@
                                 <img ng-src="{{palettes.img}}" />
                                 <button ng-click="ctrl.editPaletteButton(palettes.id)" class="btn btn-link btn-sm" data-target="#edit-modal" data-toggle="modal">Edit Color Info</button>
                                 <button ng-model='ctrl.palette' class="btn btn-link btn-sm" ng-click='ctrl.deletePalette(palettes.id)'>Delete Color</button>
-
                             </div>
                         </li>
                     </ul>
@@ -132,11 +131,11 @@
                                 <form ng-submit='ctrl.createColor();'>
                                     <div class="form-group">
                                         <label for="exampleInputName1">Color Name</label>
-                                        <input class="form-control" type="text" placeholder="Color Name" id="inputUserName" ng-model='ctrl.palettes.color_name'>
+                                        <input class="form-control" type="text" placeholder="Color Name" id="inputUserName" ng-model='ctrl.addColor.color_name'>
                                         <label for="exampleInputName1">Color Image</label>
-                                        <input class="form-control" type="text" placeholder="Url" id="inputUserName" ng-model='ctrl.palettes.img'>
+                                        <input class="form-control" type="text" placeholder="Url" id="inputUserName" ng-model='ctrl.addColor.img'>
                                         <label for="exampleInputName1">User Id</label>
-                                        <input class="form-control" type="text" placeholder="User Id Number" id="inputUserName" ng-model='ctrl.palettes.user_id'>
+                                        <input class="form-control" type="text" placeholder="User Id Number" id="inputUserName" ng-model='ctrl.addColor.user_id'>
 
                                         <div class="modal-footer">
                                             <input class="submit" class="btn btn-primary" type="submit" />
@@ -182,7 +181,6 @@
                 <!-- EDIT MODAL ENDS -->
 
             <!-- MODAL ENDS -->
-
         </main>
 
 
