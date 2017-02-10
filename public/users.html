@@ -37,18 +37,18 @@
                 <ul>
                     <li ng-repeat="user in ctrl.users">
                         <div class="info-wrapper">
-                            <p><b>User's name:</b> {{ user.name }}</p>
+                            <p><b>User's name:</b> {{ user.name }}, {{ user.id }}</p>
 
                             <ul>
                                 <p><b>Color Palettes:</b></p>
                                 <li ng-repeat="palettes in ctrl.palettes">
-                                    <p>Color name: {{ palettes.user_id }}</p>
+                                    <p>{{ palettes.color_name }}, {{ palettes.user_id }}</p>
+                                    <span ng-if="ctrl.showColor"></span>
                                 </li>
                             </ul>
-
-
                         </div>
                     </li>
+
                 </ul>
             </div>
         </main>
