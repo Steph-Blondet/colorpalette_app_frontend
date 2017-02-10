@@ -13,7 +13,7 @@ app.controller('mainController', ['$http', function($http) {
 // GETTING PALETTE
     $http({
         method: 'GET',
-        url: "/palettes"
+        url: "http://localhost:3000/palettes"
     }).then(
         function(res) {
             console.log(controller);
@@ -29,7 +29,7 @@ app.controller('mainController', ['$http', function($http) {
 // GETTING USERS
     $http({
          method: 'GET',
-         url: "/users"
+         url: "http://localhost:3000/users"
      }).then(
          function(res) {
              console.log(res.data);
@@ -47,7 +47,7 @@ app.controller('mainController', ['$http', function($http) {
     this.createUser = function() {
         $http({
             method: 'POST',
-            url: "/users",
+            url: "http://localhost:3000/users",
             data: {user: {name: this.register.name, gender: this.register.gender, age: this.register.age}}
         }).then(function(response) {
             console.log('signing up');
@@ -64,7 +64,7 @@ app.controller('mainController', ['$http', function($http) {
     this.createColor = function() {
         $http({
             method: 'POST',
-            url: "/palettes",
+            url: "http://localhost:3000/palettes",
             data: {palette: {color_name: this.addColor.color_name, img: this.addColor.img, user_id: this.addColor.user_id}}
         }).then(function(response) {
             console.log('adding color');
@@ -80,7 +80,7 @@ app.controller('mainController', ['$http', function($http) {
     this.editPaletteButton = function(id){
         $http({
             method: 'GET',
-            url: "/palettes" + id
+            url: "http://localhost:3000/palettes" + id
         }).then(
             function(res) {
                 console.log(controller);
@@ -97,7 +97,7 @@ app.controller('mainController', ['$http', function($http) {
         console.log(id);
         $http({
             method: 'PUT',
-            url: "/palettes" + id,
+            url: "http://localhost:3000/palettes" + id,
             data: {palette: {color_name: this.editPalette.color_name, img: this.editPalette.img}}
         }).then(function(response) {
             console.log('editing palette');
@@ -113,7 +113,7 @@ app.controller('mainController', ['$http', function($http) {
         console.log(id);
         $http({
             method: 'GET',
-            url: "/palettes" + id
+            url: "http://localhost:3000/palettes" + id
         }).then(
             function(res) {
                 console.log(res.data);
@@ -130,7 +130,7 @@ app.controller('mainController', ['$http', function($http) {
         console.log(id);
         $http({
             method: 'DELETE',
-            url: this.URL + id
+            url: "http://localhost:3000/palettes" + id
         }).then(function(response) {
             console.log('deleting color');
             console.log(response.data);
