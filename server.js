@@ -4,6 +4,6 @@ var port    = 3001 || process.env.PORT;
 
 app.use(express.static('public'));
 
-app.listen(3001, function() {
+app.listen(port, function() {
   console.log("ColorPalette Frontend running on port: ", port);
 });
