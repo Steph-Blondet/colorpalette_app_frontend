@@ -17,7 +17,7 @@ app.controller('mainController', ['$http', function($http) {
     }).then(
         function(res) {
             console.log(controller);
-            console.log(res, " :successful callback");
+            console.log(res.data);
             controller.palettes = res.data;
      },
         function(res) {
