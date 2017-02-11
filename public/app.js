@@ -6,7 +6,7 @@ var app = angular.module('colorpalette', []);
 app.controller('mainController', ['$http', function($http) {
     this.message = "controller works";
     var controller = this;
-    this.URL = "https://color-palettes-frontend.herokuapp.com"
+    this.URL = "https://color-palettes-app.herokuapp.com"
 
 
 
