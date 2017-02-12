@@ -49,7 +49,7 @@
                     <ul>
                         <li ng-repeat="palettes in ctrl.palettes">
                             <div class="info-wrapper">
-                                <p>Color name: {{ color_name }}</p>
+                                <p>Color name: {{ palettes.color_name }}</p>
 
                                 <img ng-src="{{palettes.img}}" />
                                 <button ng-click="ctrl.editPaletteButton(palettes.id)" class="btn btn-link btn-sm" data-target="#edit-modal" data-toggle="modal">Edit Color Info</button>
