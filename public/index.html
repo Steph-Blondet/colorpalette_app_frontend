@@ -45,7 +45,7 @@
                     <button type="button" class="btn btn-info" data-target="#create-modal" data-toggle="modal">Add a Color</button>
                 </div>
 
-                <div class="container">
+                <div class="container" ng-repeat="user in ctrl.users">
                     <ul>
                         <li ng-repeat="palettes in ctrl.palettes">
                             <div class="info-wrapper">
